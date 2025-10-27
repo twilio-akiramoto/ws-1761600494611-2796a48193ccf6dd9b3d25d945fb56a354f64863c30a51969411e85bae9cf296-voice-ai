@@ -1,0 +1,37 @@
+{
+  "name": "Twilio Voice AI Workshop",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
+
+  "forwardPorts": [3000],
+
+  "portsAttributes": {
+    "3000": {
+      "label": "WebSocket Server",
+      "onAutoForward": "notify",
+      "visibility": "public",
+      "protocol": "https"
+    }
+  },
+
+  "postCreateCommand": "npm install && bash .devcontainer/startup.sh",
+  "postStartCommand": "bash .devcontainer/startup.sh",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      }
+    }
+  }
+}

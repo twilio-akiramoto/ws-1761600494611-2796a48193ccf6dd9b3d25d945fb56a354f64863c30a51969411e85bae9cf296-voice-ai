@@ -1,0 +1,49 @@
+{
+  "name": "ConversationRelay Starter Pack",
+  "description": "AI-powered voice assistant built with Twilio ConversationRelay and OpenAI Realtime API",
+  "repository": "https://github.com/geverist/conversationrelay-starter-pack",
+  "logo": "https://www.twilio.com/content/dam/twilio-com/global/en/blog/legacy/2016/Twilio_Logo_Red.png",
+  "keywords": [
+    "twilio",
+    "conversationrelay",
+    "voice-ai",
+    "openai",
+    "websocket",
+    "realtime-api"
+  ],
+  "image": "heroku/nodejs",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+    "TWILIO_ACCOUNT_SID": {
+      "description": "Your Twilio Account SID (starts with AC)",
+      "required": true
+    },
+    "TWILIO_AUTH_TOKEN": {
+      "description": "Your Twilio Auth Token",
+      "required": true
+    },
+    "TWILIO_PHONE_NUMBER": {
+      "description": "Your Twilio phone number in E.164 format (e.g., +15551234567)",
+      "required": true
+    },
+    "OPENAI_API_KEY": {
+      "description": "Your OpenAI API Key (starts with sk-)",
+      "required": true
+    },
+    "PORT": {
+      "description": "Port to run the server on",
+      "value": "3000",
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  }
+}
